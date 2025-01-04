@@ -4,9 +4,19 @@ Luke Harold Miles, July 2019, Public Domain Dedication
 See also https://en.wikipedia.org/wiki/Monte_Carlo_tree_search
 https://gist.github.com/qpwo/c538c6f73727e254fdc7fab81024f6e1
 """
+
 from abc import ABC, abstractmethod
 from collections import defaultdict
 import math
+import logging
+from logging import getLogger
+
+logger = getLogger(__name__)
+logger.setLevel("INFO")
+console_handler = logging.StreamHandler()
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+console_handler.setFormatter(formatter)
+logger.addHandler(console_handler)
 
 
 class MCTS:
@@ -33,13 +43,24 @@ class MCTS:
 
         return max(self.children[node], key=score)
 
-    def do_iteration(self, node):
+    def do_iteration(self, node, answer=None):
         "Make the tree one layer better. (Train for one iteration.)"
+        logger.info("===== Start MCTS Iteration =====")
+        logger.info("Step 1: Perform Selection")
         path = self._select(node)
         leaf = path[-1]
+        logger.info(f"Selected leaf node type: {leaf.__class__.__name__}")
+        logger.info("Step 2: Perform Expansion")
         self._expand(leaf)
-        reward = self._rollout(leaf)
+
+        logger.info("Step 3: Perform Rollout")
+        reward = self._rollout(leaf, answer)
+        logger.info(f"Rollout completed with Reward: {reward:.2f}")
+
+        logger.info("Step 4: Perform Backpropagation")
         self._backpropagate(path, reward)
+
+        logger.info("===== End MCTS Iteration =====")
 
     def _select(self, node):
         "Find an unexplored descendent of `node`"
@@ -62,15 +83,13 @@ class MCTS:
             return  # already expanded
         self.children[node] = node.find_children()
 
-    def _rollout(self, node):
+    def _rollout(self, node, answer):
         "Returns the reward for a random simulation (to completion) of `node`"
-        invert_reward = True
         while True:
             if node.is_terminal():
-                reward = node.reward()
-                return 1 - reward if invert_reward else reward
+                reward = node.reward(answer)
+                return reward
             node = node.find_random_child()
-            invert_reward = not invert_reward
 
     def _backpropagate(self, path, reward):
         "Send the reward back up to the ancestors of the leaf"
