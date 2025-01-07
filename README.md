@@ -9,7 +9,7 @@ The MCTS implementation template is from [minimal MCTS](https://gist.github.com/
 
 # Explaination
 
-Watch how I implemented this Monte Carlo Search Tree on [Bilibili(Chinese)](【手撕代码#2｜手写蒙特卡洛树搜索｜LLM和MCTS结合】 https://www.bilibili.com/video/BV1BArPYQE8x/?share_source=copy_web&vd_source=9b4d25b8767b0ea1804ade3ffd3cf9dc)
+Watch how I implemented this Monte Carlo Search Tree on [Bilibili(Chinese)](https://www.bilibili.com/video/BV1BArPYQE8x/?share_source=copy_web&vd_source=9b4d25b8767b0ea1804ade3ffd3cf9dc)
 
 # Installation
 ```bash
