@@ -21,7 +21,7 @@ logger.addHandler(console_handler)
 num_iterations = 4
 qa_pair = json.load(open("qa.json", "r"))
 mcts = MCTS()
-model_api = OpenAIModelCalls(base_url="https://www.dmxapi.com/v1", model_name="gpt-4o")
+model_api = OpenAIModelCalls(model_name="gpt-4o")
 root_node = QuestionNode(qa_pair["question"], model_api, None)
 
 for _ in range(num_iterations):
