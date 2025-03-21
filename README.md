@@ -3,6 +3,10 @@ This is a repo for showcasing using Monte Carlo Search Tree(MCTS) with LLMs to s
 
 This is just a demo project that goes with my MCTS lecture video, so the implementation and code style can be a little bit rough, feel free to leave any issues or open PRs to contribute.
 
+# Shoutout
+
+* :partying_face: A huge shoutout to [**@euyis1019**](https://github.com/euyis1019), this demo now supports both `openai` and `deepseek` api calling, along with token usage statistics.
+
 # MCTS code template
 
 The MCTS implementation template is from [minimal MCTS](https://gist.github.com/qpwo/c538c6f73727e254fdc7fab81024f6e1).
