@@ -18,17 +18,7 @@ pip install -r requirements.txt
 
 # Run
 
-## Using OpenAI Models (Default)
-```bash
-export OPENAI_API_KEY="Your API Key"
-python main.py
-```
 
-## Using DeepSeek Models
-```bash
-export DEEPSEEK_API_KEY="Your DeepSeek API Key"
-python main.py --provider deepseek
-```
 
 ## Command Line Arguments
 The project supports the following command line arguments:
@@ -40,7 +30,10 @@ The project supports the following command line arguments:
 
 Example:
 ```bash
-python main.py --provider deepseek --model deepseek-chat --iterations 6 --api-key "Your DeepSeek API Key"
+export OPENAI_API_KEY="Your API Key"
+python main.py
 ```
-
-
+or
+```bash
+python main.py --provider deepseek --model deepseek-chat --iterations 4 --api-key "Your DeepSeek API Key"
+```
