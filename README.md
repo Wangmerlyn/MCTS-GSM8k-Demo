@@ -17,8 +17,23 @@ pip install -r requirements.txt
 ```
 
 # Run
-## Running generation with GPT-4o
+
+
+
+## Command Line Arguments
+The project supports the following command line arguments:
+- `--provider`: Select model provider, options: `openai` (default) or `deepseek`
+- `--model`: Specify model name, defaults to provider-specific model if not specified
+- `--api-key`: Directly provide API key, reads from environment variables if not specified
+- `--base-url`: Specify API base URL, defaults to provider-specific URL if not specified
+- `--iterations`: Specify number of MCTS iterations, default is 4
+
+Example:
 ```bash
 export OPENAI_API_KEY="Your API Key"
 python main.py
+```
+or
+```bash
+python main.py --provider deepseek --model deepseek-chat --iterations 4 --api-key "Your DeepSeek API Key"
 ```
