@@ -50,7 +50,7 @@ If you find **MCTS-GSM8k-Demo** useful in your research or work, please cite it 
 
 ```bibtex
 @software{Wangmerlyn_MCTS_GSM8k_Demo_2025,
-  author       = {Wang, Siyuan and Eric and Singh, Sudhanshu},
+  author       = {Wang, Siyuan and {Eric} and Singh, Sudhanshu},
   title        = {MCTS-GSM8k-Demo},
   year         = {2025},
   publisher    = {Zenodo},
