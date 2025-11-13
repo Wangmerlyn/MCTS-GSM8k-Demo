@@ -1,4 +1,7 @@
 # MCTS-GSM8k-Demo
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17587990.svg)](https://doi.org/10.5281/zenodo.17587990)
+
 This is a repo for showcasing using Monte Carlo Search Tree(MCTS) with LLMs to solve gsm8k problems.
 
 This is just a demo project that goes with my MCTS lecture video, so the implementation and code style can be a little bit rough, feel free to leave any issues or open PRs to contribute.
@@ -40,4 +43,20 @@ python main.py
 or
 ```bash
 python main.py --provider deepseek --model deepseek-chat --iterations 4 --api-key "Your DeepSeek API Key"
+```
+# 📖Citation
+
+If you find **MCTS-GSM8k-Demo** useful in your research or work, please cite it as:
+
+```bibtex
+@software{Wangmerlyn_MCTS_GSM8k_Demo_2025,
+  author       = {Wang, Siyuan and Eric and Singh, Sudhanshu},
+  title        = {MCTS-GSM8k-Demo},
+  year         = {2025},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.17587990},
+  url          = {https://doi.org/10.5281/zenodo.17587990},
+  note         = {Zenodo release. Video demo: https://www.bilibili.com/video/BV1BArPYQE8x},
+  keywords     = {mcts, llm, gsm8k, reasoning, demo}
+}
 ```
